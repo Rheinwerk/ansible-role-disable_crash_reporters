@@ -1,8 +1,7 @@
 Disable Crash Reporters
 =========
 
-This role can be used to disable the Ubuntu crash reporter daemons crash_reporters
-and Apport.
+This role can be used to disable the Ubuntu crash reporter daemons Whoopsie and Apport.
 
 [![Build Status](https://travis-ci.org/Rheinwerk/ansible-role-disable_crash_reporters.svg?branch=master)](https://travis-ci.org/Rheinwerk/ansible-role-disable_crash_reporters)
 
