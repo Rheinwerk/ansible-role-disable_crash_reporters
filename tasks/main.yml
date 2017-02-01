@@ -19,7 +19,7 @@
         - name: Ensure Whoopsie daemon is stopped and disabled
           service: name=whoopsie state=stopped enabled=false
       when: whoopsie_installed.rc == 0
-  when: _disable_crash_reports.disable_whoopsie
+  when: _disable_crash_reporters.disable_whoopsie
 
 - block:
     - name: Check if apport daemon is installed
@@ -36,5 +36,5 @@
         - name: Ensure apport daemon is stopped and disabled
           service: name=apport state=stopped enabled=false
       when: apport_installed.rc == 0
-  when: _disable_crash_reports.disable_apport
+  when: _disable_crash_reporters.disable_apport
 
