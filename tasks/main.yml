@@ -31,7 +31,7 @@
 
     - block:
         - name: Deactivate apport daemon crash report collection
-          lineinfile: dest=/etc/default/apport regexp="^enabled" line="enabled=false" state=present
+          lineinfile: dest=/etc/default/apport regexp="^enabled" line="enabled=0" state=present
 
         - name: Ensure apport daemon is stopped and disabled
           service: name=apport state=stopped enabled=false
