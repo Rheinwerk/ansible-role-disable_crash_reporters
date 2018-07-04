@@ -4,4 +4,3 @@
 _disable_crash_reporters:
   disable_apport: yes
   disable_whoopsie: yes
-
