@@ -3,7 +3,7 @@ Disable Crash Reporters
 
 This role can be used to disable the Ubuntu crash reporter daemons Whoopsie and Apport.
 
-[![Build Status](https://travis-ci.org/Rheinwerk/ansible-role-disable_crash_reporters.svg?branch=master)](https://travis-ci.org/Rheinwerk/ansible-role-disable_crash_reporters)
+[![Build Status](https://github.com/Rheinwerk/ansible-role-disable_crash_reporters/actions/workflows/ci.yml/badge.svg)](https://github.com/Rheinwerk/ansible-role-disable_crash_reporters/actions/workflows/ci.yml)
 
 Requirements
 ------------
