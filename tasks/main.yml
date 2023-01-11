@@ -10,6 +10,7 @@
   no_log: true
 
 - name: Whoopsie
+  when: _disable_crash_reporters.disable_whoopsie and 'whoopsie' in ansible_facts.packages
   block:
     - name: Deactivate Whoopsie daemon sending crash reports
       lineinfile:
@@ -23,9 +24,9 @@
         name: whoopsie
         state: stopped
         enabled: false
-  when: _disable_crash_reporters.disable_whoopsie and 'whoopsie' in ansible_facts.packages
 
 - name: Apport
+  when: _disable_crash_reporters.disable_apport and 'apport' in ansible_facts.packages
   block:
     - name: Deactivate apport daemon crash report collection
       lineinfile:
@@ -39,4 +40,3 @@
         name: apport
         state: stopped
         enabled: false
-  when: _disable_crash_reporters.disable_apport and 'apport' in ansible_facts.packages
