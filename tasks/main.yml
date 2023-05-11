@@ -5,7 +5,7 @@
 # vim:et:ts=2:ft=ansible
 
 - name: Get package facts
-  package_facts:
+  ansible.builtin.package_facts:
     manager: "auto"
   no_log: true
 
@@ -13,14 +13,14 @@
   when: _disable_crash_reporters.disable_whoopsie and 'whoopsie' in ansible_facts.packages
   block:
     - name: Deactivate Whoopsie daemon sending crash reports
-      lineinfile:
+      ansible.builtin.lineinfile:
         dest: /etc/default/whoopsie
         regexp: "^report_crashes"
         line: "report_crashes=false"
         state: present
 
     - name: Ensure Whoopsie daemon is stopped and disabled
-      service:
+      ansible.builtin.service:
         name: whoopsie
         state: stopped
         enabled: false
@@ -29,14 +29,14 @@
   when: _disable_crash_reporters.disable_apport and 'apport' in ansible_facts.packages
   block:
     - name: Deactivate apport daemon crash report collection
-      lineinfile:
+      ansible.builtin.lineinfile:
         dest: /etc/default/apport
         regexp: "^enabled"
         line: "enabled=0"
         state: present
 
     - name: Ensure apport daemon is stopped and disabled
-      service:
+      ansible.builtin.service:
         name: apport
         state: stopped
         enabled: false
